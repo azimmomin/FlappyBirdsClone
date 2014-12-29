@@ -309,7 +309,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/GameScene.o: \
  C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCBool.h \
  C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCString.h \
  C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCNotificationCenter.h \
- C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCDeprecated.h
+ C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCDeprecated.h \
+ jni/../../Classes/Pipe.h jni/../../Classes/Definitions.h
 
 jni/../../Classes/GameScene.h:
 
@@ -932,3 +933,7 @@ C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecat
 C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCNotificationCenter.h:
 
 C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCDeprecated.h:
+
+jni/../../Classes/Pipe.h:
+
+jni/../../Classes/Definitions.h:
