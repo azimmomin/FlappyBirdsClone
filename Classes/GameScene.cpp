@@ -2,7 +2,7 @@
  * GameScene.cpp
  *
  *  Created on: Dec 28, 2014
- *      Author: akbar
+ *      Author: Azim Momin
  */
 
 #include "GameScene.h"
@@ -50,6 +50,8 @@ bool GameScene::init()
     this->addChild( edgeNode );
 
     this->schedule( schedule_selector( GameScene::SpawnPipe ), PIPE_SPAWN_FREQUENCY * visibleSize.width );
+
+    bird = new Bird( this );
 
     return true;
 }

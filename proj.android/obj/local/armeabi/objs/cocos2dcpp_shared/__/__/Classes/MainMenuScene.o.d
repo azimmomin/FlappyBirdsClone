@@ -311,7 +311,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MainMenuScene.o: \
  C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCNotificationCenter.h \
  C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecated/CCDeprecated.h \
  jni/../../Classes/GameScene.h jni/../../Classes/Pipe.h \
- jni/../../Classes/Definitions.h
+ jni/../../Classes/Bird.h jni/../../Classes/Definitions.h
 
 jni/../../Classes/MainMenuScene.h:
 
@@ -938,5 +938,7 @@ C:\cocos2d-x-3.1.1\projects\FlappyBirds\proj.android\../cocos2d/cocos/./deprecat
 jni/../../Classes/GameScene.h:
 
 jni/../../Classes/Pipe.h:
+
+jni/../../Classes/Bird.h:
 
 jni/../../Classes/Definitions.h:
