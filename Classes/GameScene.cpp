@@ -71,6 +71,14 @@ bool GameScene::init()
 
     score = 0;
 
+    __String *tempScore = __String::createWithFormat( "%i", score );
+    scoreLabel = Label::createWithTTF( tempScore->getCString( ), "fonts/Marker Felt.ttf",
+    		visibleSize.height * SCORE_FONT_SIZE );
+    scoreLabel->setColor( Color3B::WHITE );
+    scoreLabel->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height * 0.75 + origin.y ) );
+
+    this->addChild( scoreLabel );
+
     this->scheduleUpdate( );
     return true;
 }
@@ -89,16 +97,17 @@ bool GameScene::onContactBegin( cocos2d::PhysicsContact &contact )
 			getCollisionBitmask() ) || ( BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 			OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask() ) )
 	{
-		CCLOG( "Score: %i", score );
-		auto scene = GameOverScene::createScene();
+		auto scene = GameOverScene::createScene( score );
 		Director::getInstance()->replaceScene( TransitionFade::create( TRANSITION_TIME, scene ) );
 	}
 	else if ( ( BIRD_COLLISION_BITMASK == a->getCollisionBitmask() && POINT_COLLISION_BITMASK == b->
 			getCollisionBitmask() ) || ( BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 			POINT_COLLISION_BITMASK == a->getCollisionBitmask() ) )
 	{
-		CCLOG( "Point Scored." );
 		score += 1;
+
+	    __String *tempScore = __String::createWithFormat( "%i", score );
+	    scoreLabel->setString( tempScore->getCString( ) );
 	}
 	return true;
 }
