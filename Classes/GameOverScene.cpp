@@ -50,6 +50,17 @@ bool GameOverScene::init()
     menu->setPosition( Point::ZERO );
     this->addChild( menu );
 
+    UserDefault *def = UserDefault::getInstance( );
+
+    auto highScore = def->getIntegerForKey( "HIGHSCORE FLAPPY", 0 );
+
+    if ( score > highScore )
+    {
+    	highScore = score;
+    	def->setIntegerForKey( "HIGHSCORE FLAPPY", highScore );
+    }
+    def->flush();
+
     __String *tempScore = __String::createWithFormat( "%i", score );
     auto currentScore = LabelTTF::create( tempScore->getCString( ), "fonts/Marker Felt.ttf",
     		visibleSize.height * SCORE_FONT_SIZE);
@@ -57,6 +68,15 @@ bool GameOverScene::init()
     		visibleSize.height / 2 + origin.y ) );
 
     this->addChild( currentScore );
+
+    __String *tempHighScore = __String::createWithFormat( "%i", highScore );
+    auto highScoreLabel = LabelTTF::create( tempHighScore->getCString( ), "fonts/Marker Felt.ttf",
+    		visibleSize.height * SCORE_FONT_SIZE );
+    highScoreLabel->setColor( Color3B::YELLOW );
+    highScoreLabel->setPosition( Point( visibleSize.width * 0.75 + origin.x,
+    		visibleSize.height / 2 + origin.y ) );
+
+    this->addChild( highScoreLabel );
     return true;
 }
 

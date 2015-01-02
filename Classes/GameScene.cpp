@@ -97,6 +97,7 @@ bool GameScene::onContactBegin( cocos2d::PhysicsContact &contact )
 			getCollisionBitmask() ) || ( BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 			OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask() ) )
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance( )->playEffect( "Sounds/Hit.mp3" );
 		auto scene = GameOverScene::createScene( score );
 		Director::getInstance()->replaceScene( TransitionFade::create( TRANSITION_TIME, scene ) );
 	}
@@ -104,6 +105,7 @@ bool GameScene::onContactBegin( cocos2d::PhysicsContact &contact )
 			getCollisionBitmask() ) || ( BIRD_COLLISION_BITMASK == b->getCollisionBitmask() &&
 			POINT_COLLISION_BITMASK == a->getCollisionBitmask() ) )
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance( )->playEffect( "Sounds/Point.mp3" );
 		score += 1;
 
 	    __String *tempScore = __String::createWithFormat( "%i", score );
