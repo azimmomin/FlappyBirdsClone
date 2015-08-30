@@ -10,3 +10,6 @@ b) Download APK from the proj.android/bin folder and install on your device.
 Note: This game has only been tested for android devices. There are no guarantees on whether or not it will work on other devices.
 
 Enjoy.
+
+
+Blah Blah blah
